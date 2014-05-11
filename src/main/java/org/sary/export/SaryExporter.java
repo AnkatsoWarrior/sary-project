@@ -73,28 +73,31 @@ public class SaryExporter implements Exporter {
 
 		drawer.dispose();
 
-		File file = new File(output);
+		File file;
 
 		try {
 			switch (format) {
 			case PNG:
-				if (isPNGOutput(output)) {
+				if (!isPNGOutput(output)) {
 					output += ".png";
 				}
+				file = new File(output);
 				ImageIO.write(bufferedImage, "png", file);
 				break;
 
 			case JPG:
-				if (isJPGOutput(output)) {
+				if (!isJPGOutput(output)) {
 					output += ".jpg";
 				}
+				file = new File(output);
 				ImageIO.write(bufferedImage, "jpg", file);
 				break;
 
 			case GIF:
-				if (isGIFOutput(output)) {
+				if (!isGIFOutput(output)) {
 					output += ".gif";
 				}
+				file = new File(output);
 				ImageIO.write(bufferedImage, "gif", file);
 				break;
 
@@ -109,15 +112,15 @@ public class SaryExporter implements Exporter {
 	}
 
 	private boolean isPNGOutput(String output) {
-		return !output.endsWith(".png") || !output.endsWith(".PNG");
+		return output.endsWith(".png") || output.endsWith(".PNG");
 	}
 
 	private boolean isJPGOutput(String output) {
-		return !output.endsWith(".jpg") || !output.endsWith(".JPG");
+		return output.endsWith(".jpg") || output.endsWith(".JPG");
 	}
 
 	private boolean isGIFOutput(String output) {
-		return !output.endsWith(".gif") || !output.endsWith(".GIF");
+		return output.endsWith(".gif") || output.endsWith(".GIF");
 	}
 
 	@Override
