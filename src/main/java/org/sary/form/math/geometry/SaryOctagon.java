@@ -23,6 +23,9 @@ import java.awt.Graphics2D;
 */
 public class SaryOctagon extends SaryPolygon  {
 
+
+	private static final long serialVersionUID = 1L;
+
 	public SaryOctagon() {
 		super();
 		type = SaryPolygon.Type.OCTAGON;

@@ -27,6 +27,9 @@ import org.sary.form.SaryForm;
 */
 public abstract class SaryPolygon extends SaryForm {
 
+
+	private static final long serialVersionUID = 1L;
+
 	public static class Type {
 		
 		public static final int SQUARE 		= 4;

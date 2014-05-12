@@ -24,6 +24,8 @@ import java.awt.Graphics2D;
 */
 public class SaryModel extends SaryForm {
 
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * {@inheritDoc}
 	 */

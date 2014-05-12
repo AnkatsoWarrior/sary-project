@@ -22,27 +22,68 @@ import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Rectangle;
+
+import java.io.Serializable;
+
 /**
 *
 * @author Nabil Andriantomanga <nabil.arrowbase at gmail.com>
 */
-public abstract class SaryForm {
+public abstract class SaryForm implements Serializable {
 
+	
+	/*
+	 * Rectangle definissant le perimetre de la forme
+	 */
 	protected Rectangle rect;
 
+	
+	/*
+	 * Couleur de fond de la forme 
+	 */
 	protected Color background;
 
+	
+	/*
+	 * Couleur de premier plan de la forme 
+	 */
 	protected Color foreground;
 
+	
+	/*
+	 *	La forme est visible ou non  
+	 */
 	protected boolean visible;
 
+	
+	/*
+	 * Epaisseur des traits de la forme
+	 */
 	protected int stroke;
 
+	
+	/*
+	 * Valeur relative au largeur et hauteur de la forme
+	 * par defaut
+	 */
 	protected static int defaultDimension;
 
+	
+	/*
+	 *	Abscisse par defaut de la forme 
+	 */
 	protected static int defaultPosX;
 
+	/*
+	 *  Ordonnée par defaut de la forme
+	 */
 	protected static int defaultPosY;
+	
+	
+	/*
+	 * Pour la serialisation
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public SaryForm() {
 		super();
@@ -91,6 +132,8 @@ public abstract class SaryForm {
 		rect.y = y;
 	}
 
+	
+	
 	/**
 	 * Permet de modifier la position de la forme dans un repere ou l'axe des
 	 * abscisses est oriente vers la droite et l'axe des ordonnees est oriente
@@ -104,6 +147,8 @@ public abstract class SaryForm {
 		rect.y = pos.y;
 	}
 
+	
+	
 	/**
 	 * Permet de specifier les dimensions de la forme
 	 * 
@@ -115,6 +160,8 @@ public abstract class SaryForm {
 		rect.height = dimension.height;
 	}
 
+	
+	
 	/**
 	 * Permet de specifier les dimensions de la forme.
 	 * 
@@ -128,6 +175,8 @@ public abstract class SaryForm {
 		rect.height = height;
 	}
 
+	
+	
 	/**
 	 * Permet de recuperer la position de la forme dans le repere utilise
 	 * 
@@ -137,6 +186,8 @@ public abstract class SaryForm {
 		return new Point(rect.x, rect.y);
 	}
 
+	
+	
 	/**
 	 * Permet de specifier la largeur de la forme
 	 * 
@@ -147,6 +198,8 @@ public abstract class SaryForm {
 		rect.width = width;
 	}
 
+	
+	
 	/**
 	 * Permet de recuperer la largeur de la forme
 	 * 
@@ -156,6 +209,8 @@ public abstract class SaryForm {
 		return rect.width;
 	}
 
+	
+	
 	/**
 	 * Permet de specifier la hauteur de la forme
 	 * 
@@ -166,6 +221,8 @@ public abstract class SaryForm {
 		rect.height = height;
 	}
 
+	
+	
 	/**
 	 * Permet de recuperer la hauteur de la forme
 	 * 
@@ -175,6 +232,8 @@ public abstract class SaryForm {
 		return rect.height;
 	}
 
+	
+	
 	/**
 	 * Permet de recuperer le {@link java.awt.Rectangle} relatif a la forme
 	 * 
@@ -184,6 +243,8 @@ public abstract class SaryForm {
 		return rect;
 	}
 
+	
+	
 	/**
 	 * Permet de specifier un {@link java.awt.Rectangle} a la forme
 	 * 
@@ -194,6 +255,8 @@ public abstract class SaryForm {
 		this.rect = rect;
 	}
 
+	
+	
 	/**
 	 * Permet de recuperer la couleur de fond de la forme. Il s'agit d'une
 	 * instance de {@link java.awt.Color}.
@@ -204,6 +267,8 @@ public abstract class SaryForm {
 		return background;
 	}
 
+	
+	
 	/**
 	 * Permet de speficier la couleur de fond de la forme. Il s'agit d'une
 	 * instance de {@link java.awt.Color}.
@@ -215,6 +280,8 @@ public abstract class SaryForm {
 		this.background = background;
 	}
 
+	
+	
 	/**
 	 * Permet de recuperer la couleur de premier plan de la forme. Il s'agit
 	 * d'une instance de {@link java.awt.Color}.
@@ -224,6 +291,8 @@ public abstract class SaryForm {
 	public Color getForeground() {
 		return foreground;
 	}
+	
+	
 
 	/**
 	 * Permet de speficier la couleur de premier plan de la forme. Il s'agit
@@ -236,6 +305,8 @@ public abstract class SaryForm {
 		this.foreground = foreground;
 	}
 
+	
+	
 	/**
 	 * Permet de recuperer l'epaisseur des lignes utilise pour dessiner cette
 	 * forme.
@@ -245,6 +316,8 @@ public abstract class SaryForm {
 	public int getStroke() {
 		return stroke;
 	}
+	
+	
 
 	/**
 	 * Permet de specifier l'epaisseur des lignes pour dessiner cette forme
@@ -258,6 +331,8 @@ public abstract class SaryForm {
 		}
 	}
 
+	
+	
 	/**
 	 * Permet de savoir si cette forme est visible ou non
 	 * 
@@ -267,6 +342,8 @@ public abstract class SaryForm {
 		return visible;
 	}
 
+	
+	
 	/**
 	 * Permet de specifier la visibilite de cette forme
 	 * 
@@ -276,6 +353,8 @@ public abstract class SaryForm {
 	public void setVisible(boolean visible) {
 		this.visible = visible;
 	}
+	
+	
 
 	/**
 	 * Permet de dessiner la forme.

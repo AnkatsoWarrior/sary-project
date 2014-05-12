@@ -23,6 +23,9 @@ import java.awt.Graphics2D;
 */
 public class SaryNonagon  extends SaryPolygon  {
 
+
+	private static final long serialVersionUID = 1L;
+
 	public SaryNonagon() {
 		super();
 		type = SaryPolygon.Type.NONAGON;

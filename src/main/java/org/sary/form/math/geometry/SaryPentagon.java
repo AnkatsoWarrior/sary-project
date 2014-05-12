@@ -24,7 +24,8 @@ import java.awt.Graphics2D;
 */
 public class SaryPentagon extends SaryPolygon {
 
-	
+	private static final long serialVersionUID = 1L;
+
 	public SaryPentagon() {
 		super();
 		type = SaryPolygon.Type.PENTAGON;

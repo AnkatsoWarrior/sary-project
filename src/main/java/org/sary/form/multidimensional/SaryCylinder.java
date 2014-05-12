@@ -26,7 +26,9 @@ import org.sary.form.SaryForm;
 */
 public class SaryCylinder extends SaryForm {
 
-	
+
+	private static final long serialVersionUID = 1L;
+
 	public SaryCylinder() {
 		super();
 		// throw new UnsupportedOperationException("Not supported yet.");

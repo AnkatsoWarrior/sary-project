@@ -28,6 +28,8 @@ import org.sary.form.SaryForm;
  */
 public class SaryCube extends SaryForm {
 
+	private static final long serialVersionUID = 1L;
+
 	public SaryCube() {
 		super();
 		// throw new UnsupportedOperationException("Not supported yet.");

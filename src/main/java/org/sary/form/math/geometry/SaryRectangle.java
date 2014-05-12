@@ -26,6 +26,8 @@ import org.sary.form.SaryForm;
 */
 public class SaryRectangle  extends SaryForm {
 
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public void draw(Graphics2D drawer) {
 		if(visible) {

@@ -27,6 +27,9 @@ import org.sary.form.SaryForm;
 */
 public class SaryTriangle extends SaryForm {
 
+
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * {@inheritDoc}
 	 */

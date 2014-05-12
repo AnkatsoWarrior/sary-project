@@ -23,7 +23,8 @@ import java.awt.Graphics2D;
 */
 public class SaryDecagon extends SaryPolygon {
 
-	
+	private static final long serialVersionUID = 1L;
+
 	public SaryDecagon() {
 		super();
 		type = SaryPolygon.Type.DECAGON;

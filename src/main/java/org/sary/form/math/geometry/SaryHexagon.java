@@ -23,7 +23,9 @@ import java.awt.Graphics2D;
 */
 public class SaryHexagon extends SaryPolygon {
 
-	
+
+	private static final long serialVersionUID = 1L;
+
 	public SaryHexagon() {
 		super();
 		type = SaryPolygon.Type.HEXAGON;

@@ -27,6 +27,9 @@ import org.sary.form.SaryForm;
 */
 public class SaryParallelogram extends SaryForm {
 
+	private static final long serialVersionUID = 1L;
+	
+	
 	private int displacement = rect.width / 4; // par defaut
 
 	public int getDisplacement() {
