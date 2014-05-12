@@ -7,6 +7,8 @@ Java Library for easily drawing and exporting to jpg, gif or png. This project i
 
 ## How to use it
 
+Add the jar file ```sary-project / target / sary.jar```  to your project. The following code snippet shows how to use the library.
+
 ```java
 	
 	public void export() throws SaryExportException {
