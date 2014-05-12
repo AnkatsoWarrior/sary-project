@@ -45,3 +45,6 @@ Java Library for easily drawing and exporting to jpg, gif or png. This project i
 
 So far, only simple geometric shapes have been developed. But soon, more complex shapes will be added.
 
+Enjoy !
+
+Andriantomanga,
