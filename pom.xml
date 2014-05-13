@@ -4,32 +4,10 @@
   <artifactId>sary</artifactId>
   <version>1.0</version>
   <name>sary project</name>
-  <description>Librairie de création graphique et d'export en image</description>
+  <description>Librairie de creation graphique et d'export en image</description>
   
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-
-				<executions>
-					<execution>
-						<phase>test</phase>
-						<goals>
-							<goal>compile</goal>
-						</goals>
-						<configuration>
-							<mainClass>org.sary.Sary</mainClass>
-						</configuration> 
-					</execution>
-				</executions>
-
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
 
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>

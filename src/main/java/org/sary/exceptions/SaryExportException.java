@@ -30,12 +30,6 @@ public class SaryExportException extends Exception {
 		
 	}
 
-	public SaryExportException(String message, Throwable cause,
-			boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-		
-	}
-
 	public SaryExportException(String message, Throwable cause) {
 		super(message, cause);
 		

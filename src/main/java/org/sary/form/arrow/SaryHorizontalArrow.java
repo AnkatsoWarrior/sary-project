@@ -18,10 +18,12 @@ package org.sary.form.arrow;
 
 import java.awt.Dimension;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 
 import org.sary.form.SaryForm;
 
 /**
+ * Represente une fleche orientee horizontalement
  * 
  * @author Nabil Andriantomanga <nabil.arrowbase at gmail.com>
  */
@@ -113,7 +115,25 @@ public abstract class SaryHorizontalArrow extends SaryForm {
 	}
 
 	
-	
+	/**
+	 * Permet de specifier le rectangle definissant le perimetre
+	 * de la forme
+	 * 
+	 * @param rect le rectangle definissant le perimetre de la forme
+	 */
+	@Override
+	public void setRect(Rectangle rect) {
+		if(rect.width > headWidth) {
+			super.setRect(rect);
+		} else {
+			rect.width = headWidth;
+			super.setRect(rect);
+		}
+		
+	}
+
+
+
 	/**
 	 * {@inheritDoc}
 	 */
