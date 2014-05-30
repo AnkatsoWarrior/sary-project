@@ -1,20 +1,19 @@
-
 /*
-* Copyright (C) 2014 Nabil Andriantomanga <nabil.arrowbase at gmail.com>
-*
-* This library is free software; you can redistribute it and/or
-* modify it under the terms of the GNU Lesser General Public
-* License as published by the Free Software Foundation; either
-* version 2.1 of the License, or (at your option) any later version.
-*
-* This library is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-* Lesser General Public License for more details.
-*
-* You should have received a copy of the GNU Lesser General Public
-* License along with this library. If not, see <http://www.gnu.org/licenses/>.
-*/
+ * Copyright (C) 2014 Nabil Andriantomanga <nabil.arrowbase at gmail.com>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library. If not, see <http://www.gnu.org/licenses/>.
+ */
 package org.sary.canvas;
 
 import java.awt.BasicStroke;
@@ -26,76 +25,34 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Queue;
 
 import org.sary.form.SaryForm;
 import org.sary.statemachine.Automaton;
-import org.sary.statemachine.State;
-import org.sary.statemachine.Transition;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
-* @author Nabil Andriantomanga <nabil.arrowbase at gmail.com>
-*/
+ * @author Nabil Andriantomanga <nabil.arrowbase at gmail.com>
+ */
 public class SaryCanvas {
 
 	private List<SaryForm> saryForms = new ArrayList<SaryForm>();
 	private Color background, foreground;
 	private int padding, stroke;
 	private String title;
-	
+
 	private static final Logger LG = LoggerFactory.getLogger(SaryCanvas.class);
-	
+
 	private Automaton automaton;
-	
+
 	public Automaton getAutomaton() {
 		return automaton;
 	}
-	
+
 	public void setAutomaton(Automaton automaton) {
 		this.automaton = automaton;
 	}
-	
-	/*
-	public void setAutomaton(Automaton automaton) {
-		if(automaton != null) {
-			this.automaton = automaton;
-			
-			State state = automaton.getInitialState();
-			if(state   != null) {
-				
-				add(state);
-				Queue<Transition> fifo 	= state.getNexts();
-				
-				do {
-					State next = null;
-					for(Transition tr : state.getNexts()) {
-						next = tr.getNext();
-						if(next != null) {
-							if(!saryForms.contains(next)) {
-								add(next);
-							}
-						}
-					}
-					
-					Transition nextTransition = fifo.poll();
-					
-					if(nextTransition != null) {
-						state = nextTransition.getNext();
-						
-						if(state != null) {
-							fifo.addAll(state.getNexts());
-						}
-					}
-					
-					
-				} while(state != null);
-			}
-		}
-	}
-	*/
 
 	public SaryCanvas() {
 		super();
@@ -103,11 +60,14 @@ public class SaryCanvas {
 	}
 
 	public void setInitParams() {
-		padding 	= 20;
-		stroke  	= 2;
 		
-		background 	= Color.white;
-		foreground 	= Color.black;
+		LG.debug("Initialisation des parametres relatifs au canvas");
+		
+		padding = 20;
+		stroke = 2;
+
+		background = Color.white;
+		foreground = Color.black;
 	}
 
 	public List<SaryForm> getSaryForms() {
@@ -141,53 +101,39 @@ public class SaryCanvas {
 	}
 
 	public void drawAll(Graphics2D drawer) {
-		
-		//automaton.draw(drawer);
-		
-		if(automaton != null) {
-			
-			Color lastColor = drawer.getColor();
-			
-			Dimension dimension = getDimension();
-			drawer.setColor(background);
-			
-			drawer.fillRect(0, 0, (int) automaton.getWidth(),
-					automaton.getHeight());
-			
-			LG.debug("Automaton : width : {} ; height : {}", automaton.getWidth(), automaton.getHeight()); 
-			
-			automaton.draw(drawer);
-		
-		} else {
-			Color lastColor = drawer.getColor();
-			
-			Dimension dimension = getDimension();
-			drawer.setColor(background);
-			drawer.fillRect(0, 0, (int) dimension.getWidth(),
-					(int) dimension.getHeight());
-			
-			drawer.setStroke(new BasicStroke(stroke));
-			
-			for (Iterator<SaryForm> iterator = saryForms.iterator(); iterator
-					.hasNext();) {
-				iterator.next().draw(drawer);
-			}
-			
-			drawer.setColor(foreground);
 
-			if(title != null) {
-				drawer.drawString(title, 20, 20);
-			}
-			
-			drawer.setColor(lastColor);
-		}
+		LG.debug("En train de dessiner les formes ");
 		
+		Color lastColor = drawer.getColor();
+
+		Dimension dimension = getDimension();
+		drawer.setColor(background);
+		drawer.fillRect(0, 0, (int) dimension.getWidth(),
+				(int) dimension.getHeight());
+
+		drawer.setStroke(new BasicStroke(stroke));
+
+		for (Iterator<SaryForm> iterator = saryForms.iterator(); iterator
+				.hasNext();) {
+			iterator.next().draw(drawer);
+		}
+
+		drawer.setColor(foreground);
+
+		if (title != null) {
+			drawer.drawString(title, 20, 20);
+		}
+
+		drawer.setColor(lastColor);
+
 	}
 
 	public Dimension getDimension() {
-		int width 	= 0;
-		int height 	= 0;
-		int limit 	= 0;
+		
+		LG.debug("Recuperation de la dimension de l'image en cours");
+		int width = 0;
+		int height = 0;
+		int limit = 0;
 
 		Rectangle saryRect;
 		SaryForm saryForm;
@@ -195,13 +141,13 @@ public class SaryCanvas {
 		for (Iterator<SaryForm> iterator = saryForms.iterator(); iterator
 				.hasNext();) {
 
-			saryForm 	= iterator.next();
-			saryRect 	= saryForm.getRect();
+			saryForm = iterator.next();
+			saryRect = saryForm.getRect();
 
-			limit 		= saryRect.x + saryRect.width;
+			limit = saryRect.x + saryRect.width;
 
 			if (limit > width) {
-				width 	= limit + padding;
+				width = limit + padding;
 			}
 
 			limit = saryRect.y + saryRect.height;
@@ -253,7 +199,7 @@ public class SaryCanvas {
 	}
 
 	public void setStroke(int stroke) {
-		if(stroke > 0) {
+		if (stroke > 0) {
 			this.stroke = stroke;
 		}
 	}
