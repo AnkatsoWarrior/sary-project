@@ -7,24 +7,26 @@
 	<name>sary project</name>
 	<description>Librairie de creation graphique et d'export en image</description>
 
+	<properties>
+		<project.build.finalName>sary project</project.build.finalName>
+		<jdk.version>1.7</jdk.version>
+		<slf4j.version>1.7.6</slf4j.version>
+	</properties>
+
 
 	<build>
 		<plugins>
-			<build>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+				</configuration>
+			</plugin>
 
-				<finalName>sary project</finalName>
 
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-compiler-plugin</artifactId>
-						<configuration>
-							<source>1.7</source>
-							<target>1.7</target>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
@@ -80,13 +82,13 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.7.6</version>
+			<version>${slf4j.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.6</version>
+			<version>${slf4j.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -100,4 +102,5 @@
 			<organization>Open Source Community</organization>
 		</developer>
 	</developers>
+
 </project>

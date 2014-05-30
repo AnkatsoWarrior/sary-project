@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2014 Nabil Andriantomanga <nabil.arrowbase at gmail.com>
  *
  * This library is free software; you can redistribute it and/or
