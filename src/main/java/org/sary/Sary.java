@@ -26,7 +26,7 @@ import org.sary.export.Exporter;
 import org.sary.export.SaryExporter;
 import org.sary.form.SaryForm;
 import org.sary.form.SaryFormat;
-import org.sary.statemachine.Automaton;
+//import org.sary.statemachine.Automaton;
 
 /**
  * 
@@ -57,10 +57,10 @@ public class Sary {
 		this.canvas = canvas;
 	}
 
-	public void setAutomaton(Automaton automaton) {
-		this.canvas.setAutomaton(automaton);
-	}
-	
+//	public void setAutomaton(Automaton automaton) {
+//		this.canvas.setAutomaton(automaton);
+//	}
+//	
 	public Exporter getExporter() {
 		return exporter;
 	}

@@ -27,7 +27,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.sary.form.SaryForm;
-import org.sary.statemachine.Automaton;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,16 +42,6 @@ public class SaryCanvas {
 	private String title;
 
 	private static final Logger LG = LoggerFactory.getLogger(SaryCanvas.class);
-
-	private Automaton automaton;
-
-	public Automaton getAutomaton() {
-		return automaton;
-	}
-
-	public void setAutomaton(Automaton automaton) {
-		this.automaton = automaton;
-	}
 
 	public SaryCanvas() {
 		super();
