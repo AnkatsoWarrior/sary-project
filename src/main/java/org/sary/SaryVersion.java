@@ -27,12 +27,13 @@ import java.io.Serializable;
  * 
  */
 public class SaryVersion implements Comparable<SaryVersion>, Serializable {
+	
 
-	private final int version = 1;
+	private final int version 					= 1;
 
-	private final String versionString = "version 1.0";
+	private final String versionString 			= "version 1.0";
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID 	= 1L;
 
 	public int getVersion() {
 		return version;
@@ -42,6 +43,18 @@ public class SaryVersion implements Comparable<SaryVersion>, Serializable {
 		return versionString;
 	}
 
+	private static class SaryVersionHelper {
+		
+		public static SaryVersion instance = new SaryVersion();
+		
+	}
+	
+	public static SaryVersion getInstance() {
+		return SaryVersionHelper.instance;
+	}
+	
+	private SaryVersion(){}
+	
 	@Override
 	public int compareTo(SaryVersion otherVersion) {
 

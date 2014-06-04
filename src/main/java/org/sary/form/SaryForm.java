@@ -1,6 +1,6 @@
 
 /*
-* Copyright (C) 2008-2012 Nabil Andriantomanga <nabil.arrowbase at gmail.com>
+* Copyright (C) 2014 Nabil Andriantomanga <nabil.arrowbase at gmail.com>
 *
 * This library is free software; you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public

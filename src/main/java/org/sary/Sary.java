@@ -152,6 +152,6 @@ public class Sary {
 	
 	public static void main(String[] args) {
 		System.out.println("Hello from Sary "
-				+ new SaryVersion().getVersionString() + " !");
+				+ SaryVersion.getInstance().getVersionString() + " !");
 	}
 }
