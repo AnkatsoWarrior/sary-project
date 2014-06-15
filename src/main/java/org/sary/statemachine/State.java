@@ -66,8 +66,8 @@ public class State extends SaryAbstractState {
 
 			label = checkLabel(label);
 			
-			drawer.drawString(label, rect.x + 10 + label.length() / 2,
-					rect.y + 5);
+			drawer.drawString(label, rect.x + rect.width/2 - label.length()*2 ,
+					rect.y + rect.height /2);
 
 			drawer.setStroke(new BasicStroke(1));
 			

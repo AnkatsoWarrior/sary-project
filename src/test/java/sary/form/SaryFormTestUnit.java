@@ -27,6 +27,7 @@ import org.sary.form.SaryFormat;
 import org.sary.form.arrow.*;
 //import org.sary.form.math.geometry.*;
 import org.sary.form.multidimensional.*;
+import org.sary.statemachine.State;
 
 /**
  * 
@@ -163,6 +164,36 @@ public class SaryFormTestUnit {
 		}
 	}
 
+	// Automate test
+	//@Ignore
+	@Test
+	public void testStateMachine() {
+		try {
+			
+			System.out.println("Exporting statemachine");
+			
+			Sary sary = new Sary();
+			
+			
+			State s = null;
+			try {
+				s = new State();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			sary.add(s);
+			
+			
+			sary.export(SaryFormat.PNG, "Etat.png");
+			
+			export();
+		} catch (SaryExportException e) {
+
+			e.printStackTrace();
+		}
+	}
+	
+	
 	@AfterClass
 	public static void end() {
 		System.out.println("test ended");
